@@ -1,0 +1,14 @@
+<input type="text" placeholder="enter your name" />
+<!-- <input type="text" placeholder="enter your age" />
+<input type="text" placeholder="enter your name" /> -->
+<div *ngFor="let step of stepsInput">
+  {{ step.name }} - In Progress: {{ step.inProgress }}, Completed:
+  {{ step.isCompleted }}
+</div>
+
+<div>
+  <h2>Step 1</h2>
+
+  <!-- Placeholder for dynamically loaded component -->
+  <ng-container #stepContainer></ng-container>
+</div>

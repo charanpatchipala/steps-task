@@ -1,0 +1,53 @@
+<section>
+  <!-- <header class="header">steps</header> -->
+  <div class="content">
+    <div class="left">
+      <div>
+        <button (click)="selectStep('Name')">Name</button>
+        <button (click)="selectStep('Age')">Age</button>
+        <button (click)="selectStep('Address')">Address</button>
+        <!-- <button (click)="emitSteps()">Emit Steps</button> -->
+      </div>
+      <h4
+        [ngClass]="{
+          'active-step': currentStep === 1,
+          'inactive-step': currentStep !== 1
+        }"
+        (click)="showStep(1)"
+      >
+        Name
+      </h4>
+      <h4
+        [ngClass]="{
+          'active-step': currentStep === 2,
+          'inactive-step': currentStep !== 2
+        }"
+        (click)="showStep(2)"
+      >
+        Age
+      </h4>
+      <h4
+        [ngClass]="{
+          'active-step': currentStep === 3,
+          'inactive-step': currentStep !== 3
+        }"
+        (click)="showStep(3)"
+      >
+        Address
+      </h4>
+    </div>
+    <!-- <app-sidebar class="left"></app-sidebar> -->
+    <!-- form.component.html -->
+
+    <!-- <app-sidebar class="left" (stepsEmitter)="emitSteps($event)"></app-sidebar> -->
+
+    <!-- Placeholder for dynamically created component -->
+    <div class="right">
+      <ng-template appStep></ng-template>
+    </div>
+  </div>
+  <div class="footer">
+    <button (click)="handleNextClick()">Next</button>
+    <button (click)="prevStep()">Back</button>
+  </div>
+</section>

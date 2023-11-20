@@ -1,0 +1,40 @@
+section{
+    display: grid;
+    gap: 20px;
+}
+.header{
+    display: flex;
+    border: 2px solid black;
+    height: 20px;
+}
+.header h4 {
+    cursor: pointer;
+    padding: 5px;
+    margin: 0;
+  }
+  
+  .active-step {
+    color: blue; 
+  }
+  
+  .inactive-step {
+    opacity: 0.5; 
+  }
+  .content{
+    display: flex;
+    gap: 30px;
+    height: 400px;
+  }
+
+  .left{
+    border: 2px solid black;
+    width: 30%;
+  }
+  .right{
+    border: 2px solid black;
+    width: 50%;
+  }
+
+  .footer{
+    display: flex;
+  }
