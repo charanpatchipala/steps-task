@@ -1,6 +1,6 @@
 // SidebarComponent.ts
 import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
-import { Steps } from '../steps';
+import { MainObject, Steps } from '../steps';
 import { StepDirective } from '../step.directive';
 import { NameComponent } from '../name/name.component';
 import { AgeComponent } from '../age/age.component';
@@ -26,25 +26,25 @@ export class SidebarComponent {
   }>();
   @Output() nextClicked = new EventEmitter<void>();
 
-  allSteps: Steps[] = [
-    { name: 'Name', inProgress: false, isCompleted: false },
-    { name: 'Age', inProgress: false, isCompleted: false },
-    { name: 'Address', inProgress: false, isCompleted: false },
+  allSteps: MainObject = [
+    { step1: { name: 'Name', inProgress: false, isCompleted: false } },
+    { step2: { name: 'Age', inProgress: false, isCompleted: false } },
+    { step3: { name: 'Address', inProgress: false, isCompleted: false } },
   ];
 
-  selectStep(stepName: string) {
-    const selectedStep = this.currentSteps.find(
-      (step) => step.name === stepName
-    );
-    if (selectedStep) {
-      this.currentStep = this.currentSteps.indexOf(selectedStep) + 1;
-      this.loadComponent();
-      this.stepsEmitter.emit({
-        steps: this.currentSteps,
-        selectedStep: selectedStep,
-      });
-    }
-  }
+  // selectStep(stepName: string) {
+  //   const selectedStep = this.currentSteps.find(
+  //     (step) => step.name === stepName
+  //   );
+  //   if (selectedStep) {
+  //     this.currentStep = this.currentSteps.indexOf(selectedStep) + 1;
+  //     this.loadComponent();
+  //     this.stepsEmitter.emit({
+  //       steps: this.currentSteps,
+  //       selectedStep: selectedStep,
+  //     });
+  //   }
+  // }
 
   ngAfterViewInit() {
     this.loadComponent();

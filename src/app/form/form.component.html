@@ -1,36 +1,33 @@
 <!-- form.component.html -->
-<header class="header">
-  <h4
-    [ngClass]="{
-      'active-step': selectedStep && selectedStep.name === 'Name',
-      'inactive-step': selectedStep && selectedStep.name !== 'Name'
-    }"
-    (click)="showStep(1)"
-  >
-    step1
-  </h4>
-  <h4
-    [ngClass]="{
-      'active-step': selectedStep && selectedStep.name === 'Age',
-      'inactive-step': selectedStep && selectedStep.name !== 'Age'
-    }"
-    (click)="showStep(2)"
-  >
-    step2
-  </h4>
-  <h4
-    [ngClass]="{
-      'active-step': selectedStep && selectedStep.name === 'Address',
-      'inactive-step': selectedStep && selectedStep.name !== 'Address'
-    }"
-    (click)="showStep(3)"
-  >
-    step3
-  </h4>
-</header>
-<app-sidebar class="left" (stepsEmitter)="emitSteps($event)"></app-sidebar>
-
-<div class="right">
-  <!-- Placeholder for dynamically created component -->
-  <ng-template appStep></ng-template>
-</div>
+<section class="section">
+  <header class="header">
+    <h4
+      [ngClass]="{
+        'active-step': selectedStep && selectedStep.name === 'Name',
+        'inactive-step': selectedStep && selectedStep.name !== 'Name'
+      }"
+      (click)="showStep(1)"
+    >
+      step1
+    </h4>
+    <h4
+      [ngClass]="{
+        'active-step': selectedStep && selectedStep.name === 'Age',
+        'inactive-step': selectedStep && selectedStep.name !== 'Age'
+      }"
+      (click)="showStep(2)"
+    >
+      step2
+    </h4>
+    <h4
+      [ngClass]="{
+        'active-step': selectedStep && selectedStep.name === 'Address',
+        'inactive-step': selectedStep && selectedStep.name !== 'Address'
+      }"
+      (click)="showStep(3)"
+    >
+      step3
+    </h4>
+  </header>
+  <app-sidebar class="left" (stepsEmitter)="emitSteps($event)"></app-sidebar>
+</section>

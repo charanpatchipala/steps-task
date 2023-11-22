@@ -2,12 +2,12 @@
   <!-- <header class="header">steps</header> -->
   <div class="content">
     <div class="left">
-      <div>
+      <!-- <div>
         <button (click)="selectStep('Name')">Name</button>
         <button (click)="selectStep('Age')">Age</button>
-        <button (click)="selectStep('Address')">Address</button>
-        <!-- <button (click)="emitSteps()">Emit Steps</button> -->
-      </div>
+        <button (click)="selectStep('Address')">Address</button> -->
+      <!-- <button (click)="emitSteps()">Emit Steps</button> -->
+      <!-- </div> -->
       <h4
         [ngClass]="{
           'active-step': currentStep === 1,
@@ -44,10 +44,9 @@
     <!-- Placeholder for dynamically created component -->
     <div class="right">
       <ng-template appStep></ng-template>
+      <button (click)="handleNextClick()">Next</button>
+      <button (click)="prevStep()">Back</button>
     </div>
   </div>
-  <div class="footer">
-    <button (click)="handleNextClick()">Next</button>
-    <button (click)="prevStep()">Back</button>
-  </div>
+  <div class="footer"></div>
 </section>

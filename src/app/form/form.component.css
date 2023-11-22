@@ -1,0 +1,10 @@
+.section{
+    display: grid;
+    gap: 20px;
+    
+}
+.header{
+    display: flex;
+    justify-content: space-around;
+    border: 5px solid blue;
+}
